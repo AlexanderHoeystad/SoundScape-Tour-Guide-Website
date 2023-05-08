@@ -15,13 +15,21 @@ namespace SoundScape_Tour_Guide_Website.Pages.Account
 
         public void OnGet()
         {
+           
         }
+
+        public void OnPost() 
+        { 
+        
+        }
+
     }
 
     public class Credential
     {
         [Required]
-        public string UserName { get; set; }
+        [Display(Name = "Username")]
+        public string Username { get; set; }
         [Required]
         public string Password { get; set; }
     }
