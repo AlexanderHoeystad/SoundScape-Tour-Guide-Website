@@ -7,4 +7,8 @@
     <RootNamespace>SoundScape_Tour_Guide_Website</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Audio\" />
+  </ItemGroup>
+
 </Project>
