@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Login.cshtml.cs" />
+    <Compile Remove="Pages\Shared\Lyt til lydfil.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Login.cshtml" />
+    <Content Remove="Pages\Shared\Lyt til lydfil.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\Audio\" />
   </ItemGroup>
 
