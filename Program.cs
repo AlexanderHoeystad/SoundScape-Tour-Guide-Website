@@ -1,7 +1,25 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+{
+    options.Cookie.Name = "MyCookieAuth";
+    options.LoginPath = "/Account/Login";
+
+});
+
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//.AddCookie(option => {
+//    option.LoginPath = "/Account/login";
+//    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+//    option.Cookie.Name = "MyCookieAuth";
+
+//});
+
 
 var app = builder.Build();
 
@@ -17,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
