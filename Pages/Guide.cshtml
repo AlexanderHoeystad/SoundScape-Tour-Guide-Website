@@ -1,0 +1,13 @@
+﻿@page
+@model GuideModel
+@{
+    ViewData["Title"] = "Guidet Tur!";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Klik på play på lydfilen for at begynde.</p>
+
+    <audio controls="controls">
+        <source src="~/audio/purplehaze.mp3" type="audio/mpeg" />
+        <source src="~/audio/purplehaze.ogg" type="audio/ogg" />
+    </audio>

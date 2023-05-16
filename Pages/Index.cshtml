@@ -1,10 +1,24 @@
-ï»¿@page
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Velkommen!</h1>
+    <p>Start din <a href="https://localhost:7250/Guide">guidede tur</a> her!</p>
+
+    <video controls muted autoplay>
+        <source src="~/audio/ragnarock.mp4" type="video/mp4" />
+    </video>
 </div>
+<h1>Søgefelt</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        Søg: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
