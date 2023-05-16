@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\SoundsFiles\**" />
+    <Content Remove="Pages\SoundsFiles\**" />
+    <EmbeddedResource Remove="Pages\SoundsFiles\**" />
+    <None Remove="Pages\SoundsFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Pages\Login.cshtml.cs" />
     <Compile Remove="Pages\Shared\Lyt til lydfil.cshtml.cs" />
   </ItemGroup>
