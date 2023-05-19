@@ -8,10 +8,63 @@
 <p>Klik på play på lydfilen for at begynde.</p>
 
 <p>
-    <a asp-page="CreateSound">Tilføj ny lydaspiller</a>
+    <a asp-page="./Guide/CreateSound">Tilføj ny lydaspiller</a>
 </p>
+<form>
+    <p>
+        Søg: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 
-    <audio controls="controls">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Sound
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Sound)
+        {
+            <tr>
+                <td>
+                    @item.Value.Id
+                </td>
+                <td>
+                    @item.Value.Name
+                </td>
+            <td>
+                @item.Value.Description
+            </td>
+            <td>
+                  <audio controls="controls">
+                    <source src="~/audio/@item.Value.SoundFileName" type="audio/mpeg" />
+                    <source src="~/audio/purplehaze.ogg" type="audio/ogg" />
+                  </audio>
+            </td>
+            <td>
+                <p>
+                    <a asp-page="Guide/EditSound" asp-route-id="@item.Key">Edit</a> |
+                    <a asp-page="Guide/DeleteSound" asp-route-id="@item.Key">Delete</a>
+                </p>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@*<audio controls="controls">
         <source src="~/audio/purplehaze.mp3" type="audio/mpeg" />
         <source src="~/audio/purplehaze.ogg" type="audio/ogg" />
-    </audio>
+    </audio>*@

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SoundScape_Tour_Guide_Website.Catalogs;
@@ -10,36 +6,35 @@ using SoundScape_Tour_Guide_Website.Models;
 
 namespace SoundScape_Tour_Guide_Website.Pages.Guide
 {
-    public class CreateSoundModel : PageModel
+    public class EditSoundModel : PageModel
     {
         private SoundAdmin catalog;
+
         [BindProperty]
         public Sounds Sound { get; set; }
-
         //private ISoundRepository catalog;
-
-        //public CreateSoundModel(ISoundRepository repository)
+        //public EditSoundModel(ISoundRepository repository)
         //{
         //    catalog = repository;
         //}
-        public CreateSoundModel() 
+        public EditSoundModel()
         {
             catalog = SoundAdmin.Instance;
         }
-        public IActionResult OnGet()
+        public void OnGet(int id)
         {
-            return Page();
+            Sound = catalog.GetSound(id);
         }
+
         public IActionResult OnPost() 
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
-            catalog.AddSound(Sound);
-
+            catalog.UpdateSound(Sound);
             return RedirectToPage("/Guide");
         }
+
     }
 }
