@@ -13,7 +13,11 @@ namespace SoundScape_Tour_Guide_Website.Catalogs
         private SoundAdmin()
         {
             Sound = new Dictionary<int, Sounds>();
-            Sound.Add(1, new Sounds() { Id = 1, Name = "Jimi Hendrix", Description = "A solo from Jimi Hendrix", SoundFileName = "purplehaze.mp3", SoundType ="purplehaze.ogg" });
+            Sound.Add(1, new Sounds() { Id = 1, Name = "Jimi Hendrix", Description = "A song from Jimi Hendrix", SoundFileName = "purplehaze.mp3", SoundType = "purplehaze.ogg" });
+            Sound.Add(2, new Sounds() { Id = 2, Name = "Hella", Description = "A track by Sacramento rock band Hella", SoundFileName = "biblicalviolence.mp3", SoundType = "biblicalbviolence.ogg" });
+            Sound.Add(3, new Sounds() { Id = 3, Name = "Black Country, New Road", Description = "Introductory track to the band's second album", SoundFileName = "spacemarine.mp3", SoundType = "spacemarine.ogg" });
+            Sound.Add(4, new Sounds() { Id = 4, Name = "Black Midi", Description = "A song from their newest record, Cavalcade", SoundFileName = "welcometohell.mp3", SoundType = "welcometohell.mp3" });
+            Sound.Add(5, new Sounds() { Id = 5, Name = "Boris", Description = "The most popular song from Japanese experimental band, Boris", SoundFileName = "farewell.mp3", SoundType = "farewell.ogg" });
         }
         public static SoundAdmin Instance
         {
