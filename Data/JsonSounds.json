@@ -1,0 +1,37 @@
+{
+  "1": {
+    "Id": 1,
+    "Name": "Jimi Hendrix",
+    "Description": " A song from Jimi Hendrix Experience",
+    "SoundFileName": "purplehaze.mp3",
+    "Soundtype": "purplehaze.ogg"
+  },
+  "2": {
+    "Id": 2,
+    "Name": "Hella",
+    "Description": "A track by Sacramento rock band Hella",
+    "SoundFileName": "biblicalviolence.mp3",
+    "SoundType": "biblicalviolence.ogg"
+  },
+  "3": {
+    "Id": 3,
+    "Name": "Black Country, New Road",
+    "Description": "Introductory track to the band's second album",
+    "SoundFileName": "spacemarine.mp3",
+    "Soundtype": "spacemarine.ogg"
+  },
+  "4": {
+    "Id": 4,
+    "Name": "Black Midi",
+    "Description": "A song from their newest record, Cavalcade",
+    "SoundFileName": "welcometohell.mp3",
+    "Soundtype": "welcometohell.ogg"
+  },
+  "5": {
+    "Id": 5,
+    "Name": "Boris",
+    "Description": "The most popular song from Japanese experimental band, Boris",
+    "SoundFileName": "farewell.mp3",
+    "Soundtype": "farewell.ogg"
+  }
+}
