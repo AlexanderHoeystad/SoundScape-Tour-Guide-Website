@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace SoundScape_Tour_Guide_Website.Catalogs
 {
-    public class SoundAdmin/*:ISoundRepository*/
+    public class SoundAdmin /*:ISoundRepository */
     {
         private Dictionary<int, Sounds> Sound { get; }
         private static SoundAdmin _instance;
@@ -67,6 +67,18 @@ namespace SoundScape_Tour_Guide_Website.Catalogs
                 Sound[sound.Id] = sound;
             }
         }
+        //public void UpdateSound2(Sounds sound)
+        //{
+        //    foreach (var p in Sound.Values)
+        //    {
+        //        if (p.Id == sound.Id)
+        //        {
+        //            p.Name = sound.Name;
+        //            p.SoundFileName = sound.SoundFileName;
+        //            p.Description = sound.Description;
+        //        }
+        //    }
+        //}
 
         public void DeleteSound(Sounds sound)
         {
