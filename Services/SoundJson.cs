@@ -65,6 +65,7 @@ namespace SoundScape_Tour_Guide_Website.Services
                     s.SoundType = sound.SoundType;
                     s.Description = sound.Description;
                 }
+                JsonFileWriter.WriteToJson(sounds, JsonFileName);
             }
         }
 
