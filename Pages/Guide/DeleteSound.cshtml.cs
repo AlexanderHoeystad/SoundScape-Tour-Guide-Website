@@ -8,21 +8,20 @@ namespace SoundScape_Tour_Guide_Website.Pages.Guide
 {
     public class DeleteSoundModel : PageModel
     {
-        private SoundAdmin catalog;
+        //private SoundAdmin catalog;
         [BindProperty]
         public Sounds Sound { get; set; }
-        //brug mig for interface!!
-        //private ISoundRepository catalog;
-        //public DeleteSoundModel(ISoundRepository repository)
-        //{
-        //    catalog = repository;
-        //}
+        private ISoundRepository catalog;
+        public DeleteSoundModel(ISoundRepository repository)
+        {
+            catalog = repository;
+        }
 
         //fjern mig for implenmatation af interface
-        public DeleteSoundModel()
-        {
-            catalog = SoundAdmin.Instance;
-        }
+        //public DeleteSoundModel()
+        //{
+        //    catalog = SoundAdmin.Instance;
+        //}
         //-----------------------------------------
         public IActionResult OnGet(int id)
         {

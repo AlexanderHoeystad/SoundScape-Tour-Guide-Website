@@ -8,12 +8,12 @@ namespace SoundScape_Tour_Guide_Website.Interfaces
 {
     public interface ISoundRepository
     {
-        Dictionary<int, Sounds> AllSounds();
-        Dictionary<int, Sounds> FilterSound(string crtiteria);
-        void DeleteSound(Sounds sound);
-        void AddSound(Sounds sound);
-        void UpdateSound(Sounds sound);
-        Sounds GetSound(int id);
+        public Dictionary<int, Sounds> AllSounds();
+        public Dictionary<int, Sounds> FilterSound(string crtiteria);
+        public void DeleteSound(Sounds sound);
+        public void AddSound(Sounds sound);
+        public void UpdateSound(Sounds sound);
+        public Sounds GetSound(int id);
     }
 
 }

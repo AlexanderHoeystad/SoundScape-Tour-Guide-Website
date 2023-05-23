@@ -5,12 +5,12 @@ using System.Reflection;
 
 namespace SoundScape_Tour_Guide_Website.Catalogs
 {
-    public class SoundAdmin /*:ISoundRepository */
+    public class SoundAdmin : ISoundRepository
     {
         private Dictionary<int, Sounds> Sound { get; }
         private static SoundAdmin _instance;
 
-        private SoundAdmin()
+        public SoundAdmin()
         {
             Sound = new Dictionary<int, Sounds>();
             Sound.Add(1, new Sounds() { Id = 1, Name = "Jimi Hendrix", Description = "A song from Jimi Hendrix", SoundFileName = "purplehaze.mp3", SoundType = "purplehaze.ogg" });

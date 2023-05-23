@@ -5,12 +5,16 @@ using SoundScape_Tour_Guide_Website.Pages.Account;
 using System.Reflection;
 namespace SoundScape_Tour_Guide_Website.Services
 {
-    public class SoundJson //:ISoundRepository
+    public class SoundJson :ISoundRepository
     {
         private Dictionary<int, Sounds> Sound { get; }
         string JsonFileName = @"C:\Users\beuge\source\repos\SoundScape-Tour-Guide-Websitev2\Data\JsonSounds.json";
 
-        public void AddPizza(Sounds sound)
+        public SoundJson()
+        {
+            
+        }
+        public void AddSound(Sounds sound)
         {
             Dictionary<int, Sounds> sounds  = AllSounds();
             sounds.Add(sound.Id, sound);
@@ -21,7 +25,7 @@ namespace SoundScape_Tour_Guide_Website.Services
         {
             return JsonFileReader.ReadJson(JsonFileName);
         }
-        public Dictionary<int, Sounds> FilterPizza(string criteria)
+        public Dictionary<int, Sounds> FilterSound(string criteria)
         {
             Dictionary<int, Sounds> sounds = AllSounds();
             Dictionary<int, Sounds> filteredSounds = new Dictionary<int, Sounds>();

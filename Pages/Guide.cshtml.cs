@@ -14,20 +14,20 @@ namespace SoundScape_Tour_Guide_Website.Pages
         //{
         //    _logger = logger;
         //}
-        
-        //brug mig for at bruge interfaces
-        //private ISoundRepository catalog;
-        //public GuideModel(ISoundRepository repository)
-        //{ 
-        //    catalog = repository;
-        //}
 
-        //fjern mig for at bruge interfaces!!
-        private SoundAdmin catalog;
-        public GuideModel() 
+        //brug mig for at bruge interfaces
+        private ISoundRepository catalog;
+        public GuideModel(ISoundRepository repository)
         {
-            catalog = SoundAdmin.Instance;
+            catalog = repository;
         }
+
+            //fjern mig for at bruge interfaces!!
+        //private SoundAdmin catalog;
+        //public GuideModel() 
+        //{
+        //    catalog = SoundAdmin.Instance;
+        //}
         // -----------------------------------
 
         public Dictionary<int, Sounds> Sound { get; private set; }

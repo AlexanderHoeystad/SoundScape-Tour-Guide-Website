@@ -12,20 +12,20 @@ namespace SoundScape_Tour_Guide_Website.Pages.Guide
 {
     public class CreateSoundModel : PageModel
     {
-        private SoundAdmin catalog;
+        //private SoundAdmin catalog;
         [BindProperty]
         public Sounds Sound { get; set; }
 
-        //private ISoundRepository catalog;
+        private ISoundRepository catalog;
 
-        //public CreateSoundModel(ISoundRepository repository)
-        //{
-        //    catalog = repository;
-        //}
-        public CreateSoundModel() 
+        public CreateSoundModel(ISoundRepository repository)
         {
-            catalog = SoundAdmin.Instance;
+            catalog = repository;
         }
+        //public CreateSoundModel() 
+        //{
+        //    catalog = SoundAdmin.Instance;
+        //}
         public IActionResult OnGet()
         {
             return Page();
