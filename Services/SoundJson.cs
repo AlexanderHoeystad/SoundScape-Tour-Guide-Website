@@ -7,8 +7,10 @@ namespace SoundScape_Tour_Guide_Website.Services
 {
     public class SoundJson :ISoundRepository
     {
-        public Dictionary<int, Sounds> Sound { get; }
-        string JsonFileName = @"C:\Users\beuge\source\repos\SoundScape-Tour-Guide-Website\Data\JsonSounds.json";
+        //public Dictionary<int, Sounds> Sound { get; }
+
+        //Husk at ændrer Routen:
+        string JsonFileName = @"C:\Users\beuge\source\repos\SoundScape-Tour-Guide-Websitev2\Data\JsonSounds.json";
 
         //public SoundJson()
         //{
@@ -52,8 +54,9 @@ namespace SoundScape_Tour_Guide_Website.Services
         }
         public void UpdateSound(Sounds sound)
         {
+            Dictionary<int, Sounds> sounds = AllSounds();
             // not implemented yet
-            foreach (var s in Sound.Values)
+            foreach (var s in sounds.Values)
             {
                 if (s.Id == sound.Id)
                 {
