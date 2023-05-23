@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using SoundScape_Tour_Guide_Website.Interfaces;
-using SoundScape_Tour_Guide_Website.Catalogs;
+using SoundScape_Tour_Guide_Website.Services;
 
 //namespace Pizza_StoreV8
 //{
@@ -35,7 +35,9 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddRazorPages();
 
 //builder.Services.AddSingleton<ISoundRepository, SoundAdmin>();
-builder.Services.AddTransient<ISoundRepository, SoundAdmin>();
+//builder.Services.AddTransient<ISoundRepository, SoundAdmin>();
+//builder.Services.AddSingleton<ISoundRepository, SoundAdmin>();
+builder.Services.AddTransient<ISoundRepository, SoundJson>();
 
 builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
 {

@@ -7,13 +7,13 @@ namespace SoundScape_Tour_Guide_Website.Services
 {
     public class SoundJson :ISoundRepository
     {
-        private Dictionary<int, Sounds> Sound { get; }
-        string JsonFileName = @"C:\Users\beuge\source\repos\SoundScape-Tour-Guide-Websitev2\Data\JsonSounds.json";
+        public Dictionary<int, Sounds> Sound { get; }
+        string JsonFileName = @"C:\Users\beuge\source\repos\SoundScape-Tour-Guide-Website\Data\JsonSounds.json";
 
-        public SoundJson()
-        {
+        //public SoundJson()
+        //{
             
-        }
+        //}
         public void AddSound(Sounds sound)
         {
             Dictionary<int, Sounds> sounds  = AllSounds();
@@ -31,7 +31,7 @@ namespace SoundScape_Tour_Guide_Website.Services
             Dictionary<int, Sounds> filteredSounds = new Dictionary<int, Sounds>();
             foreach (var s in sounds.Values)
             {
-                if (s.Name.StartsWith(criteria))
+                if (s.Name.ToLower().StartsWith(criteria.ToLower()))
                 {
                     filteredSounds.Add(s.Id, s);
                 }
@@ -41,8 +41,9 @@ namespace SoundScape_Tour_Guide_Website.Services
         }
         public Sounds GetSound(int id)
         {
+            Dictionary<int, Sounds> sounds = AllSounds();
             // not implemented yet;
-            foreach (var s in Sound)
+            foreach (var s in sounds)
             {
                 if (s.Key == id)
                     return s.Value;
@@ -66,14 +67,17 @@ namespace SoundScape_Tour_Guide_Website.Services
 
         public void DeleteSound(Sounds sound)
         {
+            Dictionary<int, Sounds> sounds = AllSounds();
             // not implemented;
-            foreach (var s in Sound.Values)
+            sounds.Remove(sound.Id);
+            /*foreach (var s in sounds.Values)
             {
                 if (s.Id == sound.Id)
                 {
                     Sound.Remove(s.Id);
                 }
-            }
+            }*/
+            JsonFileWriter.WriteToJson(sounds, JsonFileName);
         }
 
     }

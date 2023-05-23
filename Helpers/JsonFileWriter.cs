@@ -7,9 +7,9 @@ namespace SoundScape_Tour_Guide_Website.Helpers
 {
     public class JsonFileWriter
     {
-        public static void WriteToJson(Dictionary<int, Sounds> pizzas, string JsonFileName)
+        public static void WriteToJson(Dictionary<int, Sounds> sounds, string JsonFileName)
         {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(pizzas,
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(sounds,
                                                                Newtonsoft.Json.Formatting.Indented);
 
             File.WriteAllText(JsonFileName, output);

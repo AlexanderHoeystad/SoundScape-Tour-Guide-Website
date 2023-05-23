@@ -3,12 +3,12 @@ using SoundScape_Tour_Guide_Website.Models;
 using SoundScape_Tour_Guide_Website.Pages.Account;
 using System.Reflection;
 
-namespace SoundScape_Tour_Guide_Website.Catalogs
+namespace SoundScape_Tour_Guide_Website.Services
 {
     public class SoundAdmin : ISoundRepository
     {
-        private Dictionary<int, Sounds> Sound { get; }
-        private static SoundAdmin _instance;
+        public Dictionary<int, Sounds> Sound { get; }
+        //private static SoundAdmin _instance;
 
         public SoundAdmin()
         {
@@ -19,24 +19,24 @@ namespace SoundScape_Tour_Guide_Website.Catalogs
             Sound.Add(4, new Sounds() { Id = 4, Name = "Black Midi", Description = "A song from their newest record, Cavalcade", SoundFileName = "welcometohell.mp3", SoundType = "welcometohell.mp3" });
             Sound.Add(5, new Sounds() { Id = 5, Name = "Boris", Description = "The most popular song from Japanese experimental band, Boris", SoundFileName = "farewell.mp3", SoundType = "farewell.ogg" });
         }
-        public static SoundAdmin Instance
-        {
-            get 
-            {
-                if (_instance == null)
-                {
-                    _instance = new SoundAdmin();
-                }
-                return _instance;
-            } 
-        }
+        //public static SoundAdmin Instance
+        //{
+        //    get 
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new SoundAdmin();
+        //        }
+        //        return _instance;
+        //    } 
+        //}
         public Dictionary<int, Sounds> AllSounds()
         {
             return Sound;
         }
         public void AddSound(Sounds sound)
         {
-            if (!(Sound.Keys.Contains(sound.Id)))
+            if (!Sound.Keys.Contains(sound.Id))
                 Sound.Add(sound.Id, sound);
         }
 

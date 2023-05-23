@@ -4,7 +4,7 @@
     "Name": "Jimi Hendrix",
     "Description": " A song from Jimi Hendrix Experience",
     "SoundFileName": "purplehaze.mp3",
-    "Soundtype": "purplehaze.ogg"
+    "SoundType": "purplehaze.ogg"
   },
   "2": {
     "Id": 2,
@@ -18,20 +18,20 @@
     "Name": "Black Country, New Road",
     "Description": "Introductory track to the band's second album",
     "SoundFileName": "spacemarine.mp3",
-    "Soundtype": "spacemarine.ogg"
+    "SoundType": "spacemarine.ogg"
   },
   "4": {
     "Id": 4,
     "Name": "Black Midi",
     "Description": "A song from their newest record, Cavalcade",
     "SoundFileName": "welcometohell.mp3",
-    "Soundtype": "welcometohell.ogg"
+    "SoundType": "welcometohell.ogg"
   },
   "5": {
     "Id": 5,
     "Name": "Boris",
     "Description": "The most popular song from Japanese experimental band, Boris",
     "SoundFileName": "farewell.mp3",
-    "Soundtype": "farewell.ogg"
+    "SoundType": "farewell.ogg"
   }
 }
